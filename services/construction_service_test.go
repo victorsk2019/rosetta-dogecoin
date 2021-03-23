@@ -68,7 +68,7 @@ func TestConstructionService(t *testing.T) {
 	publicKey := &types.PublicKey{
 		Bytes: forceHexDecode(
 			t,
-			"3044022030475ecf08b2c234a0f1ecfdb65871e4e6a419a995e667ce8bc2c331b916c2df02200b6dffef4a9fb2528a7f65f6e780583ba874618d4a141415dfb65f2f4bb833be",
+			"0325c9a4252789b31dbb3454ec647e9516e7c596bcde2bd5da71a60fab8644e438",
 		),
 		CurveType: types.Secp256k1,
 	}
