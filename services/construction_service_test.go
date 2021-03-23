@@ -68,7 +68,7 @@ func TestConstructionService(t *testing.T) {
 	publicKey := &types.PublicKey{
 		Bytes: forceHexDecode(
 			t,
-			"0325c9a4252789b31dbb3454ec647e9516e7c596bcde2bd5da71a60fab8644e438",
+			"3044022030475ecf08b2c234a0f1ecfdb65871e4e6a419a995e667ce8bc2c331b916c2df02200b6dffef4a9fb2528a7f65f6e780583ba874618d4a141415dfb65f2f4bb833be",
 		),
 		CurveType: types.Secp256k1,
 	}
@@ -79,7 +79,9 @@ func TestConstructionService(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, &types.ConstructionDeriveResponse{
 		AccountIdentifier: &types.AccountIdentifier{
-			Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
+			//From dogecoin-core key_tests.cpp 
+			Address: "DSpgzjPyfQB6ZzeSbMWpaZiTTxGf2oBCs4",
+			//Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
 		},
 	}, deriveResponse)
 
@@ -91,7 +93,8 @@ func TestConstructionService(t *testing.T) {
 			},
 			Type: bitcoin.InputOpType,
 			Account: &types.AccountIdentifier{
-				Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
+				Address: "DSpgzjPyfQB6ZzeSbMWpaZiTTxGf2oBCs4", 
+				//Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
 			},
 			Amount: &types.Amount{
 				Value:    "-1000000",
@@ -110,7 +113,9 @@ func TestConstructionService(t *testing.T) {
 			},
 			Type: bitcoin.OutputOpType,
 			Account: &types.AccountIdentifier{
-				Address: "tb1q3r8xjf0c2yazxnq9ey3wayelygfjxpfqjvj5v7",
+				//From dogecoin-core key-tests.cpp
+				Address: "DR9VqfbWgEHZhNst34KQnABQXpPWXeLAJD", 
+				//Address: "tb1q3r8xjf0c2yazxnq9ey3wayelygfjxpfqjvj5v7",
 			},
 			Amount: &types.Amount{
 				Value:    "954843",
@@ -123,7 +128,8 @@ func TestConstructionService(t *testing.T) {
 			},
 			Type: bitcoin.OutputOpType,
 			Account: &types.AccountIdentifier{
-				Address: "tb1qjsrjvk2ug872pdypp33fjxke62y7awpgefr6ua",
+				Address: "D8jZ6R8uuyQwiybupiVs3eDCedKdZ5bYV3", 
+				//Address: "tb1qjsrjvk2ug872pdypp33fjxke62y7awpgefr6ua",
 			},
 			Amount: &types.Amount{
 				Value:    "44657",
@@ -169,7 +175,8 @@ func TestConstructionService(t *testing.T) {
 				RequiredSigs: 1,
 				Type:         "witness_v0_keyhash",
 				Addresses: []string{
-					"tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
+					"DSpgzjPyfQB6ZzeSbMWpaZiTTxGf2oBCs4", 
+					//"tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
 				},
 			},
 		},
@@ -256,7 +263,8 @@ func TestConstructionService(t *testing.T) {
 			},
 			Type: bitcoin.InputOpType,
 			Account: &types.AccountIdentifier{
-				Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
+				Address: "DSpgzjPyfQB6ZzeSbMWpaZiTTxGf2oBCs4", 
+				//Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
 			},
 			Amount: &types.Amount{
 				Value:    "-1000000",
@@ -276,7 +284,8 @@ func TestConstructionService(t *testing.T) {
 			},
 			Type: bitcoin.OutputOpType,
 			Account: &types.AccountIdentifier{
-				Address: "tb1q3r8xjf0c2yazxnq9ey3wayelygfjxpfqjvj5v7",
+				Address: "DP7rGcDbpAvMb1dKup981zNt1heWUuVLP7", 
+				//Address: "tb1q3r8xjf0c2yazxnq9ey3wayelygfjxpfqjvj5v7",
 			},
 			Amount: &types.Amount{
 				Value:    "954843",
@@ -290,7 +299,9 @@ func TestConstructionService(t *testing.T) {
 			},
 			Type: bitcoin.OutputOpType,
 			Account: &types.AccountIdentifier{
-				Address: "tb1qjsrjvk2ug872pdypp33fjxke62y7awpgefr6ua",
+				//strAddressBad ("DRjyUS2uuieEPkhZNdQz8hE5YycxVEqSXA"); in key_tests.cpp	
+				Address: "DRjyUS2uuieEPkhZNdQz8hE5YycxVEqSXA",
+				//Address: "tb1qjsrjvk2ug872pdypp33fjxke62y7awpgefr6ua",
 			},
 			Amount: &types.Amount{
 				Value:    "44657",
@@ -306,7 +317,8 @@ func TestConstructionService(t *testing.T) {
 			"7b98f8b77fa6ef34044f320073118033afdffbd3fd3f8423889d9e5953ff4a30",
 		),
 		AccountIdentifier: &types.AccountIdentifier{
-			Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
+			Address: "DSpgzjPyfQB6ZzeSbMWpaZiTTxGf2oBCs4",
+			//Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
 		},
 		SignatureType: types.Ecdsa,
 	}
@@ -359,7 +371,8 @@ func TestConstructionService(t *testing.T) {
 	assert.Equal(t, &types.ConstructionParseResponse{
 		Operations: parseOps,
 		AccountIdentifierSigners: []*types.AccountIdentifier{
-			{Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm"},
+			{Address: "DSpgzjPyfQB6ZzeSbMWpaZiTTxGf2oBCs4"},
+			//{Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm"},
 		},
 	}, parseSignedResponse)
 
@@ -377,11 +390,11 @@ func TestConstructionService(t *testing.T) {
 	}, hashResponse)
 
 	// Test Submit
-	bitcoinTransaction := "010000000001017f9cf50b02dd5258f80cd5c3437302e027dd1336172a20cdc80305c5a55741b10100000000ffffffff02db910e000000000016001488ce6925f8513a234c05c922ee933f221323052071ae000000000000160014940726595c41fca0b4810c62991ad9d289eeb82802473044022025876ec8b9f51d343a5a56ac549c0c828005ef45ebe9da166db645c09157223f02204cd08b7278a8889a81135915bce10d1ef3bb92b217f81a0de7e79ffb3dfd6ac501210325c9a4252789b31dbb3454ec647e9516e7c596bcde2bd5da71a60fab8644e43800000000" // nolint
+	dogecoinTransaction := "010000000001017f9cf50b02dd5258f80cd5c3437302e027dd1336172a20cdc80305c5a55741b10100000000ffffffff02db910e000000000016001488ce6925f8513a234c05c922ee933f221323052071ae000000000000160014940726595c41fca0b4810c62991ad9d289eeb82802473044022025876ec8b9f51d343a5a56ac549c0c828005ef45ebe9da166db645c09157223f02204cd08b7278a8889a81135915bce10d1ef3bb92b217f81a0de7e79ffb3dfd6ac501210325c9a4252789b31dbb3454ec647e9516e7c596bcde2bd5da71a60fab8644e43800000000" // nolint
 	mockClient.On(
 		"SendRawTransaction",
 		ctx,
-		bitcoinTransaction,
+		dogecoinTransaction,
 	).Return(
 		transactionIdentifier.Hash,
 		nil,
