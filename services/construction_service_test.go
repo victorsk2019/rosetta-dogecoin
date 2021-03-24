@@ -68,7 +68,7 @@ func TestConstructionService(t *testing.T) {
 	publicKey := &types.PublicKey{
 		Bytes: forceHexDecode(
 			t,
-			"0325c9a4252789b31dbb3454ec647e9516e7c596bcde2bd5da71a60fab8644e438",
+			"0336f85352cc845d25254bb0035634483412a557804cd0eb1c3d37eca75b3f666d",
 		),
 		CurveType: types.Secp256k1,
 	}
@@ -84,8 +84,8 @@ func TestConstructionService(t *testing.T) {
 			//Address: "tb1qcqzmqzkswhfshzd8kedhmtvgnxax48z4fklhvm",
 		},
 	}, deriveResponse)
-
 	// Test Preprocess
+
 	ops := []*types.Operation{
 		{
 			OperationIdentifier: &types.OperationIdentifier{
